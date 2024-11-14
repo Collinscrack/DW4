@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Posts</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+    <h1>Gestión de Posts</h1>
+
+    <div id="posts-container"></div>
+
+    <h2>Crear nuevo post</h2>
+    <form id="post-form">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required><br>
+        <label for="author">Autor:</label>
+        <input type="text" id="author" name="author" required><br>
+        <label for="body">Contenido:</label>
+        <textarea id="body" name="body" required></textarea><br>
+        <button type="submit">Crear Post</button>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
