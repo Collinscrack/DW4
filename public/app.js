@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/post";
+const API_URL = "https://dw4-gestor-de-posts-1.onrender.com/api/post";
 
 const postsContainer = document.getElementById("posts-container");
 const postForm = document.getElementById("post-form");

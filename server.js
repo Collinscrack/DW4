@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';  // Importa fileURLToPath para convertir URL en path
-import postRoutes from "./routes/post.js";
+import postRoutes from "./routes/post.js";  // Asegúrate de importar las rutas
 
 dotenv.config();
 
@@ -17,15 +17,19 @@ const __dirname = path.dirname(__filename);  // Obtiene el directorio del archiv
 
 app.use(cors());
 app.use(express.json());
-app.use('/api/post', postRoutes);
 
-// Servir archivos estáticos
+// Aquí es donde configuras las rutas
+app.use('/api/post', postRoutes);  // Esto conecta tus rutas de post a /api/post
+
+// Servir archivos estáticos (por ejemplo, el index.html)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Ruta para la página principal (index.html)
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Conexión a la base de datos y ejecución del servidor
 async function main() {
   try {
     await mongoose.connect(process.env.DB);
